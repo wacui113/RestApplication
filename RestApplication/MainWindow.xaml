@@ -1,0 +1,58 @@
+﻿<Window x:Class="RestApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RestApp"
+        mc:Ignorable="d"
+        Title="Nghỉ ngơi" Height="180" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="rest.ico" Loaded="Window_Loaded" StateChanged="Window_StateChanged">
+    <Grid Margin="8,5">
+        <Grid Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="117*"/>
+                    <ColumnDefinition Width="26*"/>
+                    <ColumnDefinition Width="135*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Row="0" Height="20" Orientation="Horizontal" VerticalAlignment="Center" Grid.ColumnSpan="3" Margin="0,2,0,3">
+                    <Menu x:Name="menuDisplay" HorizontalAlignment="Left" Background="White">
+                        <MenuItem Header="Cài đặt">
+                            <MenuItem Header="Hiển thị">
+                                <MenuItem Header="Thu nhỏ" Click="MinimizeItem_Click"></MenuItem>
+                                <MenuItem Header="Thoát" Click="ExitItem_Click"></MenuItem>
+                            </MenuItem>
+                        </MenuItem>
+                    </Menu>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="2">
+                    <Button Click="Button_Click" Content="Kích hoạt" x:Name="btnFunction"></Button>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1" TextBlock.FontSize="16" TextBlock.TextAlignment="Center" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock>Còn lại</TextBlock>
+                <TextBlock x:Name="txblTimer" Grid.Column="1"></TextBlock>
+            </Grid>
+
+            <Grid Grid.Row="2" Height="25">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" TextAlignment="Center" VerticalAlignment="Center">Nghỉ ngơi sau</TextBlock>
+                <ComboBox Grid.Column="1" x:Name="cbRepeatTime">
+                </ComboBox>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>
